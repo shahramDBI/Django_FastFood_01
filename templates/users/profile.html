@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} {{ user.username }} {% endblock %}
+{% block body %}
+    <div class="container-flute">
+        <div class="row">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ user.profile.image.url }}" alt="{{ user.username }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.username }}</h5>
+                    <p class="card-text">{{ user.location }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Detail {% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="p-3 mb-2 bg-success text-white text-center"><h1>Food Details</h1></div>
+                <div class="card">
+                    <img class="card-img-top" src="{{ item.item_image }}" alt="{{ item.item_name }}">
+                    <div class="card-body">
+                        <h1 class="card-title">{{ item.item_name }}</h1>
+                        <p class="card-text">{{ item.item_desc }}</p>
+                        <h3 class="card-title">{{ item.item_price }}$</h3>
+                        <a class="btn btn-success" href="{% url 'food:index' %}">Index</a>
+                        <a class="btn btn-warning" href="{% url 'food:delete_item' item.id %}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
