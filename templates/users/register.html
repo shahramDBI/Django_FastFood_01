@@ -1,14 +1,30 @@
 {% extends "base.html" %}
-{% block title %} SignUp {% endblock %}
+{% block title %} Register {% endblock %}
 {% block body %}
-    <div class="p-3 mb-2 bg-success text-white text-center"><h1>SignUp</h1></div>
     <div class="container">
         <div class="row">
-            <form method="post">
-                {% csrf_token %}
-                {{ form }}
-                <button class="btn btn-success" type="submit">SignUp</button>
-            </form>
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <div class="card-title">
+                            <h1>Register</h1>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.name }}
+                                    <br>
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <button class="btn btn-info" type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -8,6 +8,7 @@
             <table>
                 <tr>
                     <th>ID</th>
+                    <th>Item User</th>
                     <th>Item Image</th>
                     <th>Item Name</th>
                     <th>Item Desc</th>
@@ -17,6 +18,7 @@
                 {% for item in item_list %}
                 <tr>
                     <td>{{ item.id }}</td>
+                    <td>{{ item.user_name }}</td>
                     <td><img class="card" height="50px" width="50px" src="{{ item.item_image }}"></td>
                     <td>{{ item.item_name }}</td>
                     <td>{{ item.item_desc }}</td>
